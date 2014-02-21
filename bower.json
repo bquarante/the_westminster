@@ -1,0 +1,10 @@
+{
+  "name": "The Westminster",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.9",
+    "modernizr": "~2.7.1",
+    "inuit.css": "~5.0.0"
+  },
+  "devDependencies": {}
+}
