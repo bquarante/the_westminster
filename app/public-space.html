@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>The Westminster Roppongi</title>
 		<meta name="Keywords" content="The Westminster Roppongi,renovation,condominium apartment,Grosvenor,Roppongi,Azabu-Juban">
@@ -29,6 +29,7 @@
 		<!-- endbuild -->	
 	</head>
 	<body class="public-space">
+		<div class="nav-mobile">&#9776;</div>
 		<nav role="navigation">
 			<ul id="nav">
 				<li><img src="images/nav-about.png" alt="ABOUT"></li>
@@ -45,24 +46,40 @@
 			</ul>
 		</nav>
 		<img class="logo" src="images/logo.png" alt="The Westminster" width="190" height="140">
-		<div class="swiper-container">
-			<a class="arrow-left" href="#"></a> 
-			<a class="arrow-right" href="#"></a>
-			<div class="swiper-wrapper">
-				<div class="swiper-slide"><img src="images/public-space1.jpg" alt=""></div>
-				<div class="swiper-slide"><img src="images/public-space2.jpg" alt=""></div>
-				<div class="swiper-slide"><img src="images/public-space3.jpg" alt=""></div>
-				<div class="swiper-slide"><img src="images/public-space4.jpg" alt=""></div>
-				<div class="swiper-slide"><img src="images/public-space5.jpg" alt=""></div>
+		<div id="slides">
+			<ul class="slides-container">
+				<li>
+					<div class="info">日本的でありながら、インターナショナル。<br>それこそが、この邸宅の魅力。</div>
+					<img id="1" src="images/public-space1.jpg" alt="" width="1600" height="1100">
+				</li>
+				<li>
+					<img id="2" src="images/public-space2.jpg" alt="" width="1600" height="1100">
+				</li>
+				<li>
+					<img id="3" src="images/public-space3.jpg" alt="" width="1600" height="1100">
+				</li>
+				<li>
+					<img id="4" src="images/public-space4.jpg" alt="" width="1600" height="1100">
+				</li>
+				<li>
+					<img id="5" src="images/public-space5.jpg" alt="" width="1600" height="1100">
+				</li>
+			</ul>
+			<div class="slides-navigation">
+				<a href="#" class="prev"></a>
+				<a href="#" class="next"></a>
 			</div>
 		</div>
+		
+		<!-- <a class="arrow-left" href="#"></a> 
+		<a class="arrow-right" href="#"></a> -->
 		<footer role="contentinfo" class="text--center push--top">
-		<ul>
-			<li><a href="http://www.grosvenor.com"><img src="images/footer-grosvenor-ja.png" alt="GROSVENOR"></a></li>
-			<li><a href="http://www.mf-realty.jp"><img src="images/footer-mitsui-ja.png" alt="MITSUI FUDOSAN REALITY CO.,LTD."></a></li>
-			<li><img src="images/footer-tel-info-ja.png" alt="tel : 0120-599-321"></li>
-			<li><img src="images/footer-copyright.png" alt="COPYRIGHT GROSVENOR ALL RIGHTS RESERVED"></li>
-		</ul>
+			<ul>
+				<li><a href="http://www.grosvenor.com"><img src="images/footer-grosvenor-ja.png" alt="GROSVENOR"></a></li>
+				<li><a href="http://www.mf-realty.jp"><img src="images/footer-mitsui-ja.png" alt="MITSUI FUDOSAN REALITY CO.,LTD."></a></li>
+				<li><img src="images/footer-tel-info-ja.png" alt="tel : 0120-599-321"></li>
+				<li><img src="images/footer-copyright.png" alt="COPYRIGHT GROSVENOR ALL RIGHTS RESERVED"></li>
+			</ul>
 		</footer>
 		<!-- build:js scripts/scripts.js -->
 		<!-- bower:js -->
@@ -71,30 +88,23 @@
 		<script src="bower_components/parallax/jquery.localscroll-1.2.7-min.js"></script>
 		<script src="bower_components/parallax/jquery.scrollTo-1.4.2-min.js"></script>
 		<script src="scripts/parallax.js"></script>
-		<script src="bower_components/swiper/dist/idangerous.swiper.js"></script>
 		<script src="bower_components/greensock/src/minified/plugins/CSSPlugin.min.js"></script>
 		<script src="bower_components/greensock/src/minified/easing/EasePack.min.js"></script>
 		<script src="bower_components/greensock/src/minified/TweenLite.min.js"></script>
 		<script src="scripts/navigation.js"></script>
+		<script src="bower_components/superslides/examples/javascripts/jquery.easing.1.3.js"></script>
+		<script src="bower_components/superslides/dist/jquery.superslides.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 		<script>
-			var mySwiper = new Swiper('.swiper-container',{
-				loop:true,
-				speed: 800,
-				grabCursor: true,
-				paginationClickable: true,
-				calculateHeight: true,
-				responsive: true
-			})
-			$('.arrow-left').on('click', function(e){
-				e.preventDefault();
-				mySwiper.swipePrev();
-			})
-			$('.arrow-right').on('click', function(e){
-				e.preventDefault();
-				mySwiper.swipeNext();
-			})
+		$(function() {
+			$('#slides').superslides({
+				hashchange: true,
+				animation_speed: 900,
+				animation_easing: 'easeOutQuad',
+				pagination: false
+			});
+		});
 		</script>
 	</body>
 </html>

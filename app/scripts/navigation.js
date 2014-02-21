@@ -30,14 +30,21 @@ $(document).ready(function($)
 				}
 				else{
 					TweenLite.to($nav, 0.8, {
-						'left' : (-w) +'px',
-						'display' : 'none'
+						'left' : (-w) +'px'
+						//'display' : 'none'
 					});
 				}
 			}
 		}
 	});
-	
+	$(window).resize(function() {
+		if($(window).width() <= 480){
+			$nav.css({
+				'display' : 'none', 
+				'left' : (-w) +'px'
+			});
+		}
+	});
 
 	function initNavigation(){
 		TweenLite.to($nav, 0.8, {
